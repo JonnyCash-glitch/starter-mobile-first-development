@@ -1,4 +1,8 @@
+/* Base styles */
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align items for better mobile layout */
   margin-top: 60px;
 }
 
@@ -26,4 +30,35 @@ main h3 {
 main p {
   font-family: "Roboto", sans-serif;
   margin-top: 0;
+}
+
+/* Ensure images are responsive */
+main img {
+  width: 100%; /* Make images scale based on the container's width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Correct any default inline behavior */
+  margin: 0 auto; /* Center images */
+}
+
+/* Media query for screens wider than 800px */
+@media (min-width: 800px) {
+  main {
+    flex-direction: column; /* Keep it column for simplicity unless your design requires row layout */
+    max-width: 1200px; /* Optional: Constrain max width for very large screens */
+    margin: auto; /* Center the main content on larger screens */
+  }
+
+  /* Example adjustments for larger screens */
+  main h1, main h2, main h3 {
+    text-align: left; /* Adjust text alignment if needed */
+    padding: 0 20px; /* Add padding to headings on larger screens for better readability */
+  }
+
+  .group {
+    display: flex;
+    flex-direction: row; /* Only if you have group class and want to line items horizontally */
+    justify-content: space-around; /* Spread out content */
+    width: 100%; /* Use the full width of the main container */
+    margin-bottom: 100px; /* Adjust spacing between groups */
+  }
 }
